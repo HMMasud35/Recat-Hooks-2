@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+
+}
+
+@layer {
+  .container {
+    @apply !w-[1320px] m-auto
+  }
+
+  .item {
+    @apply text-lg font-semibold text-white p-2 w-25 text-center  hover:bg-teal-200 hover:text-teal-800 transform duration-2000 relative
+  }
+
+  .after {
+    @apply after:content-[""] after:absolute after:bottom-0 after:left-0 after:h-1 after:w-full after:bg-teal-800 after:transition-transform after:duration-700 after:origin-center after:scale-x-0
+  }
+
+  .after:hover {
+    @apply after:w-full after:origin-center after:scale-x-100
+  }
+
+}
