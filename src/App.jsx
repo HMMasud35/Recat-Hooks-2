@@ -1,10 +1,14 @@
 import React from 'react'
-import Header from "./Hooks/Header";
+import Header from "./Components/Pages/Header";
+import Products from './Components/Pages/Products';
 
 
 const App = () => {
   return (
+    <>
     <Header/>
+    <Products/>
+    </>
   )
 }
 
