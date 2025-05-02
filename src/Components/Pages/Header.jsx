@@ -3,9 +3,9 @@ import React from 'react'
 const Header = () => {
   return (
     <header>
-      <nav className='fixed w-full dark:bg-gray-800'>
+      <nav className='fixed w-full dark:bg-gray-800 z-1'>
         <div className="container">
-          <div className='w-full flex items-center justify-between p-5'>
+          <div className='w-full flex items-center justify-between p-2'>
             <div>
               <a className='text-6xl text-amber-700 font-extrabold' href="">
                 <h2>MK</h2>
