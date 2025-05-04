@@ -3,10 +3,13 @@ import React, { useEffect, useState } from "react";
 import { IoIosStar } from "react-icons/io";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { ImPriceTags } from "react-icons/im";
-import { RiShoppingCart2Line } from "react-icons/ri";
+import Popps from "./Popps";
+
+
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [PoppsBox, setPoppsBox] = useState(false);
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((res) => {
@@ -15,7 +18,6 @@ const Products = () => {
   }, []);
 
   return (
-
     <div>
       <section className="w-full bg-gray-50 py-30 dark:bg-gray-900" >
         <div className="container">
@@ -56,13 +58,18 @@ const Products = () => {
                     </div>
                     <div className="flex gap-5 mt-5 mb-2">
                       <h3 className="text-white text-xl font-bold">Tk. {item.price}</h3>
-                      <p className="text-white/30 text-xl  font-semibold">Tk. {item.price}</p>
+                      <p className="text-white/30 text-xl line-through  font-semibold">Tk. {item.price}</p>
                     </div>
-                    <button className="flex items-center text-xl font-bold text-white m-auto justify-center bg-amber-600 w-full py-2 rounded-md"><RiShoppingCart2Line className="mr-2 text-2xl" />Add to cart</button>
+                    <button onClick={() => setPoppsBox(!PoppsBox)} className="flex items-center text-xl font-bold text-white m-auto justify-center bg-amber-600 w-full py-2 rounded-md">Add to cart</button>
+
                   </div>
                 </div>
               )
+
             })}
+            {PoppsBox &&
+              <Popps />
+            }
           </div>
           <div className="w-full text-center mt-10">
             <button
@@ -74,7 +81,6 @@ const Products = () => {
           </div>
         </div>
       </section>
-
     </div>
   );
 };
